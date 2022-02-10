@@ -10,8 +10,11 @@
 */
 
 if ( ! function_exists( 'aztheme_setup' ) ) {
+  /**
+   * Function to activate WordPress features
+   * @return
+  */
   function aztheme_setup() {
-
     // Enables plugins and themes to manage the document title tag.
     add_theme_support( 'title-tag' );
 

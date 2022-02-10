@@ -22,3 +22,8 @@
 </head>
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
+  <!-- Start our header -->
+  <header class="site-header">
+    <?php get_template_part( 'template-parts/header/upperbar' ); ?>
+  </header>
+  <!-- End our header -->

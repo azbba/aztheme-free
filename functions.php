@@ -8,5 +8,7 @@
 */
 
 require get_template_directory() . '/inc/config.php';
+require get_template_directory() . '/inc/helper.php';
 require get_template_directory() . '/inc/setup/setup.php';
 require get_template_directory() . '/inc/setup/enqueue.php';
+require get_template_directory() . '/inc/setup/menus.php';
