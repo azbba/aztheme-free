@@ -25,5 +25,6 @@
   <!-- Start our header -->
   <header class="site-header">
     <?php get_template_part( 'template-parts/header/upperbar' ); ?>
+    <?php get_template_part( 'template-parts/header/navbar' ); ?>
   </header>
   <!-- End our header -->

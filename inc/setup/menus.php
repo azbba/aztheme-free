@@ -65,7 +65,7 @@ if ( ! function_exists( 'social_media_menu' ) ) {
       ?>
         <ul class="list-unstyled d-flex mb-0 social-media-menu">
           <?php 
-            foreach( $menu_items as $menu_item): 
+            foreach ( $menu_items as $menu_item): 
               $media = trim( strtolower($menu_item->title), ' ' ); 
               if ( in_array( $media, $allowed_media ) ):
           ?>
@@ -75,6 +75,58 @@ if ( ! function_exists( 'social_media_menu' ) ) {
               </a>
             </li>
           <?php endif; endforeach; ?>
+        </ul>
+      <?php
+    endif;
+  }
+}
+
+if ( ! function_exists( 'aztheme_primary_menu' ) ) {
+  function aztheme_primary_menu() {
+    $menu_id = aztheme_get_menu_id( 'primary_menu' );
+    if ( $menu_id === false ) {
+      return;
+    }
+    $menu_items = wp_get_nav_menu_items( $menu_id );
+    if ( is_array( $menu_items ) && !empty( $menu_items ) ):
+      ?>
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+          <?php foreach ( $menu_items as $menu_item ):
+            if ( ! $menu_item->menu_item_parent  ):
+              $child_menus = aztheme_child_menu_items( $menu_items, $menu_item->ID );
+              if ( empty( $child_menus ) ):
+                ?>
+                  <li class="nav-item">
+                    <a class="nav-link <?php echo aztheme_is_active( $menu_item->url ); ?>" href="<?php echo esc_url($menu_item->url); ?>">
+                      <?php echo esc_html( $menu_item->title ); ?>
+                    </a>
+                  </li>
+                <?php
+              else:
+                ?>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="<?php echo esc_url($menu_item->url); ?>" id="<?php echo 'navbarDropDown' . $menu_item->ID;  ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <?php echo esc_html( $menu_item->title ); ?>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="<?php echo 'navbarDropDown' . $menu_item->ID;  ?>">
+                      <?php
+                        foreach( $child_menus as $child_item ):
+                          ?>
+                            <li>
+                              <a class="dropdown-item" href="<?php echo esc_url( $child_item->url ) ?>">
+                                <?php echo esc_html($child_item->title); ?>
+                              </a>
+                            </li>
+                          <?php
+                        endforeach;
+                      ?>
+                    </ul>
+                  </li>
+                <?php
+              endif;
+            endif;
+          endforeach; 
+          ?>
         </ul>
       <?php
     endif;
