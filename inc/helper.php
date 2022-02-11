@@ -51,3 +51,28 @@ if ( ! function_exists( 'aztheme_is_active' ) ) {
     return $current_url == rtrim($url, '/') ? 'active' : '';
   }
 }
+
+if ( !function_exists( 'aztheme_sanitize_description' ) ) {
+  /**
+   * Function to sanitize description text
+   * Allow only [ a, br, strong, em ]
+   * @param string $description
+   * @return string $description
+  */
+  function aztheme_sanitize_description( $description ) {
+    return wp_kses( 
+      $description, 
+      [
+        'a'         => [
+          'href'    => [],
+          'class'   => [],
+          'target'  => [],
+          'title'   => []
+        ],
+        'strong'    => [],
+        'em'        => [],
+        'br'        => []
+      ] 
+    );
+  }
+}
