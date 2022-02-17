@@ -1,0 +1,13 @@
+/**
+ * Start our global rules
+*/
+
+@use '../abstracts' as *;
+
+body {
+  font: {
+    family: $f_family;
+    size: $f_size;
+    weight: $f_regular;
+  }
+}

@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+:root {
+  --c-primary:        #{$c_primary};
+  --c-primary-light:  #{$c_primary_light};
+  --c-primary-dark:   #{$c_primary_dark};
+
+  --c-grey:           #{$c_grey};
+  --c-grey-text:      #{$c_grey_text};
+
+  --c-dark:           #{$c_dark};
+}

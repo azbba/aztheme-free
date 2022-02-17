@@ -1,0 +1,52 @@
+@use '../abstracts/breakpoint' as *;
+@use '../abstracts/colors' as *;
+//================================================
+// Hover mixin
+//================================================
+
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+//================================================
+// transition mixin
+// @param $prop css property
+// @param $dur transition duration
+// @param $func transition timing function
+//================================================
+
+@mixin transition($prop: all, $dur: 380ms, $func: ease-in-out) {
+  transition: $prop $dur $func;
+}
+
+//================================================
+// Responsive mixin
+// @param string $breakpoint (sm, md, lg, xl, xxl)
+// @param string $media ( min, max, between )
+// @param $media must be greater than $breakpoins
+//================================================
+
+@mixin respond( $breakpoint, $media: "min" ) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if $media == "min" {
+      @media ( min-width: map-get($breakpoints, $breakpoint) ) {
+        @content;
+      }
+    }
+    @else if $media == "max" {
+      @media ( max-width: map-get($breakpoints, $breakpoint) ) {
+        @content;
+      }
+    } 
+    @else if ( $media == "between" ) {
+      @if $breakpoint != "xxl" {
+        @media ( min-width: map-get($breakpoints, $breakpoint) ) and ( max-width: map-get-next($breakpoints, $breakpoint) ) {
+          @content;
+        }
+      }
+    }
+  }
+}

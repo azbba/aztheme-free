@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+%bg-primary {
+  background-color: var( --c-primary, $c_primary );
+}

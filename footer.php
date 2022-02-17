@@ -6,6 +6,6 @@
  * @subpackage aztheme
 */
 ?>
-
+  <?php wp_footer(); ?>
 </body>
 </html>

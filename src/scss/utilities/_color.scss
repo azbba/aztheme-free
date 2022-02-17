@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+%c-primary {
+  color: var( --c-primary, $c_primary );
+}
+
+%c-primary-light {
+  color: var( --c-primary-light, $c_primary_light );
+}
+
+%c-primary-dark {
+  color: var( --c-primary-dark, $c_primary_dark );
+}
+
+%c-grey-text {
+  color: var( --c-grey-text, $c_grey_text );
+}
+
+%c-dark {
+  color: var( --c-dark, $c_dark );
+}
