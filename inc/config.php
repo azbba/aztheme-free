@@ -14,3 +14,6 @@ defined( 'JS_PATH' ) or define( 'JS_PATH', get_template_directory_uri() . '/asse
 
 // Returns an URL for css directory
 defined( 'LIBS_PATH' ) or define( 'LIBS_PATH', get_template_directory_uri() . '/assets/libs/' );
+
+// Returns an URL for iamges directory
+defined( 'IMG_PATH' ) or define( 'IMG_PATH', get_template_directory_uri() . '/assets/images/' );

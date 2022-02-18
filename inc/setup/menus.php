@@ -68,9 +68,10 @@ if ( ! function_exists( 'social_media_menu' ) ) {
             foreach ( $menu_items as $menu_item): 
               $media = trim( strtolower($menu_item->title), ' ' ); 
               if ( in_array( $media, $allowed_media ) ):
+                $media_label = ucfirst( substr( $media, strpos( $media, '-' ) ) );
           ?>
             <li>
-              <a href="<?php echo esc_url( $menu_item->url ); ?>" target="_blank">
+              <a href="<?php echo esc_url( $menu_item->url ); ?>" target="_blank" aria-label="<?php echo esc_attr( $media_label ); ?>">
                 <i class="fa fa-fw fa-<?php echo esc_attr( $media ); ?>" aria-hidden="true"></i>
               </a>
             </li>

@@ -29,3 +29,8 @@
     <?php get_template_part( 'template-parts/header/page-header' ) ?>
   </header>
   <!-- End our header -->
+  <!-- Start our content -->
+  <section class="site-content">
+    <div class="container">
+      <div class="row">
+        <div class="<?php echo esc_attr( aztheme_content_layout( 'content' ) ); ?>">

@@ -76,3 +76,39 @@ if ( !function_exists( 'aztheme_sanitize_description' ) ) {
     );
   }
 }
+
+if ( ! function_exists( 'aztheme_content_layout' ) ) {
+  /**
+   * Function to determine the site-content column sizes
+   * @param string $element
+   * @return array $columns
+  */
+  function aztheme_content_layout( $element ) {
+    // Default columns
+    $content_area = 'col-md-8 col-lg-9';
+    $sidebar = 'col-md-4 col-lg-3';
+
+    if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
+      $content_area = 'col-12';
+    }
+
+    $columns = [
+      'content' => $content_area,
+      'sidebar' => $sidebar
+    ];
+
+    return $columns[ $element ];
+  }
+}
+
+if ( ! function_exists( 'aztheme_sanitize_post_template' ) ) {
+  /**
+   * Function to sanitize post template
+   * @param string $template
+   * @return string $template 
+  */
+  function aztheme_sanitize_post_template( $template ) {
+    $allowed_template = [ 'card', 'boxes', 'classic' ];
+    return in_array( $template, $allowed_template ) ? $template : 'card';
+  }
+}

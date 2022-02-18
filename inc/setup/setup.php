@@ -33,6 +33,11 @@ if ( ! function_exists( 'aztheme_setup' ) ) {
 
     // Enables Post Thumbnails support
     add_theme_support( 'post-thumbnails' );
+    
+    // Register post thumbnail sizes
+    add_image_size( 'card-thumbnail', 860, 575 );
+    add_image_size( 'classic-thumbnail', 280, 157 );
+    add_image_size( 'boxes-thumbnail', 636, 357 );
 
     // Enables Automatic Feed Links for post and comment in the head.
     add_theme_support( 'automatic-feed-links' );

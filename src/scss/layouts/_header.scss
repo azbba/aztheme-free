@@ -38,7 +38,7 @@
     .navbar {
       .navbar-brand {
         font-weight: $f_bold;
-        @extend %c-grey-text;
+        @extend %c-dark;
         @include transition(color);
         @include hover() {
           @extend %c-primary;
@@ -49,7 +49,7 @@
           position: relative;
           font-weight: $f_bold;
           font-size: rem(14px);
-          @extend %c-grey-text;
+          @extend %c-dark;
           @include transition(color);
           @include hover() {
             @extend %c-primary;
@@ -96,7 +96,7 @@
           background-color: #fff;
           .dropdown-item {
             font-weight: $f_bold;
-            @extend %c-grey-text;
+            @extend %c-dark;
             @include transition();
             @include hover {
               @extend %bg-primary;

@@ -11,3 +11,9 @@ body {
     weight: $f_regular;
   }
 }
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
