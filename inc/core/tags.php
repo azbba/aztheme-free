@@ -161,8 +161,8 @@ if ( ! function_exists( 'aztheme_read_more' ) ) {
   */
   function aztheme_read_more() {
     ?>
-      <a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more-btn ms-auto">
-        <?php esc_html_e( 'Continue Reading', 'aztheme' ); ?>
+      <a href="<?php echo esc_url( get_permalink() ); ?>" class="aztheme-btns read-more-btn ms-auto">
+        <span class="label"><?php esc_html_e( 'Continue Reading', 'aztheme' ); ?></span>
       </a>
     <?php
   }

@@ -89,7 +89,7 @@ if ( ! function_exists( 'aztheme_content_layout' ) ) {
     $sidebar = 'col-md-4 col-lg-3';
 
     if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
-      $content_area = 'col-12';
+      // $content_area = 'col-12';
     }
 
     $columns = [

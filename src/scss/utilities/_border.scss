@@ -1,0 +1,5 @@
+@use '../abstracts' as *;
+
+%bb-primary {
+  border-bottom: 1px solid var( --c-primary, $c_primary );
+}

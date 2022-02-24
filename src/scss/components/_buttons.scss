@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+@use '../utilities' as *;
+
+.aztheme-btns {
+  @extend %bg-primary;
+  color: #fff;
+  border-radius: 0;
+  &.read-more-btn {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    @include transition();
+    @include hover() {
+      color: #fff;
+      &::before {
+        left: 0;
+      }
+    }
+    .label {
+      padding: .5rem .625rem;
+      z-index: 2;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: -100%;
+      @extend %bg-primary-dark;
+      @include transition(left);
+      z-index: 1;
+    }
+    &::after {
+      content: "\f037";
+      font-family: FontAwesome;
+      @extend %bg-primary-dark;
+      padding: .5rem .625rem;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}

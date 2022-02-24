@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( ( is_singular() ? 'singular-page' : '' ) ); ?>>
   <?php wp_body_open(); ?>
   <!-- Start our header -->
   <header class="site-header">

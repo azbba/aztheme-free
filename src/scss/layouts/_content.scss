@@ -1,0 +1,116 @@
+/**
+ * Start our header
+*/
+
+@use '../abstracts' as *;
+@use '../utilities' as *;
+
+.site-content {
+  padding: $main_space 0;
+  .post,
+  .page {
+    background-color: #fff;
+    border-bottom: 1px solid var(--c-primary, $c_primary);
+    @extend %bb-primary;
+    @extend %box-shadow;
+    margin-bottom: $main_space;
+    // &:not(:last-of-type) {
+    //   margin-bottom: $main_space;
+    // }
+    .entry-categories {
+      display: flex;
+      a {
+        color: #fff;
+        font-size: rem(12px);
+        font-weight: $f_bold;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        margin-bottom: .5rem;
+        margin-right: .5rem;
+        @extend %bg-primary;
+        @include transition(background-color);
+        @include hover() {
+          @extend %bg-primary-dark;
+        }
+      }
+    } // .entry-categories
+    .entry-title {
+      font-size: rem(28px);
+      font-weight: $f_bold;
+      text-transform: capitalize;
+      margin-bottom: .5rem;
+      a {
+        @extend %c-dark;
+        @include transition(color);
+        @include hover() {
+          @extend %c-primary;
+        }
+      }
+    } // .entry-title
+    .post-meta {
+      flex-wrap: wrap;
+      margin-bottom: .5rem;
+      text-transform: capitalize;
+      font-weight: $f_bold;
+      font-size: rem(14px);
+      @extend %c-dark;
+      a, time {
+        @extend %c-dark;
+        cursor: pointer;
+        margin-right: 15px;
+        @include transition(color);
+        @include hover() {
+          @extend %c-primary;
+        }
+      }
+    } // .post-meta
+    .entry-thumbnail {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      &.card-thumbnail {
+        max-height: 575px;
+      }
+      &.classic-thumbnail {
+        max-height: 157px;
+      }
+      &.boxes-thumbnail {
+        max-height: 357px;
+      }
+    } // .entry-thumbnail
+    .entry-excerpt {
+      margin-bottom: 0;
+      font-size: rem(17px);
+      color: #73777a;
+    } // .entry-excerpt
+  } // .post, page
+  .post-card {
+    .entry-header {
+      padding: 20px 20px 0;
+    }
+    .entry-excerpt {
+      padding: 20px 20px 0;
+    }
+    .entry-footer {
+      display: flex;
+      .read-more-btn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-right: 15px;
+      }
+    }
+  } // .post-card
+  .post-boxes {
+    .entry-body {
+      padding: 20px;
+      .entry-title {
+        font-size: rem(24px);
+      }
+    }
+  } // .post-boxes
+  .post-classic {
+    .entry-excerpt {
+      margin-bottom: 0.5rem;
+    }
+  } 
+}

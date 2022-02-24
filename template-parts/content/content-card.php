@@ -17,7 +17,7 @@
     </header>
     <div class="entry-body">
       <?php 
-        aztheme_the_thumbnail();
+        aztheme_the_thumbnail( 'card-thumbnail' );
         aztheme_the_excerpt(); 
       ?>
     </div>
